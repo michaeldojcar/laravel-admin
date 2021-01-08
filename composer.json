@@ -3,7 +3,7 @@
     "description": "Laravel admin boilerplate.",
     "type": "library",
     "require": {
-        "laravel/ui": "^3.2"
+        "laravel/ui": "^3.0"
     },
     "license": "MIT",
     "authors": [
