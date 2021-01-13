@@ -23,7 +23,9 @@
       "MichaelDojcar\\LaravelAdmin\\": "src/"
     }
   },
-  "require": {},
+  "require": {
+    "laravel/ui": "^3.2"
+  },
   "require-dev": {
     "orchestra/testbench": "^6.0",
     "phpunit/phpunit": "^9.5"
