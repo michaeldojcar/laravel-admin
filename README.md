@@ -1,5 +1,7 @@
 # Laravel admin
 
+[![Latest Stable Version](https://poser.pugx.org/michaeldojcar/laravel-admin/v)](//packagist.org/packages/michaeldojcar/laravel-admin) [![Total Downloads](https://poser.pugx.org/michaeldojcar/laravel-admin/downloads)](//packagist.org/packages/michaeldojcar/laravel-admin) [![Latest Unstable Version](https://poser.pugx.org/michaeldojcar/laravel-admin/v/unstable)](//packagist.org/packages/michaeldojcar/laravel-admin) [![License](https://poser.pugx.org/michaeldojcar/laravel-admin/license)](//packagist.org/packages/michaeldojcar/laravel-admin)
+
 Pretty simple and also quite pretty admin panel for your Laravel app.
 
 ## Get started
