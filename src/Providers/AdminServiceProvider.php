@@ -3,6 +3,7 @@
 namespace MichaelDojcar\LaravelAdmin\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use MichaelDojcar\LaravelAdmin\Facades\Admin;
 
 /**
  * Class AdminServiceProvider
@@ -14,6 +15,11 @@ class AdminServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(__DIR__ . '/../../config/admin.php', 'admin');
+
+        // Admin facade
+        $this->app->bind('admin', function ($app) {
+            return new Admin();
+        });
     }
 
     public function boot()
@@ -23,6 +29,9 @@ class AdminServiceProvider extends ServiceProvider
 
         // Publish config
         $this->publishConfig();
+
+        // Views
+        $this->loadViewsFrom(__DIR__ . '/../../resources/views', 'admin');
     }
 
     private function publishConfig()
