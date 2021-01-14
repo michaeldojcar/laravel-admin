@@ -25,3 +25,9 @@ Publish config and assets.
 ```
 php artisan vendor:publish --provider="MichaelDojcar\LaravelAdmin\Providers\AdminServiceProvider"
 ```
+
+### Create first user
+Create first admin user using this command.
+```
+php artisan admin:user
+```
