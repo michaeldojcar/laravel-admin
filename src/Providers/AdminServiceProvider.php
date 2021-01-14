@@ -3,7 +3,9 @@
 namespace MichaelDojcar\LaravelAdmin\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use MichaelDojcar\LaravelAdmin\Facades\Admin;
+use MichaelDojcar\LaravelAdmin\Admin;
+use MichaelDojcar\LaravelAdmin\Console\UserSeedCommand;
+
 
 /**
  * Class AdminServiceProvider
@@ -38,9 +40,25 @@ class AdminServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
 
+            // Register commands
+            $this->commands([
+                UserSeedCommand::class,
+            ]);
+
+            // Publish config
             $this->publishes([
                 __DIR__ . '/../../config/admin.php' => config_path('admin.php'),
             ], 'config');
+
+            // Publish assets
+            $this->publishes([
+                __DIR__ . '/../../resources/css/app.css' => public_path('vendor/admin/css/app.css'),
+            ], 'assets');
+
+            // Publish views
+            $this->publishes([
+                __DIR__ . '/../../resources/views' => resource_path('views/vendor/admin'),
+            ], 'views');
 
         }
     }

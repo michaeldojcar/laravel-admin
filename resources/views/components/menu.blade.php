@@ -1,5 +1,5 @@
 @auth
     <li>
-        <a href="{{ route('admin.episodes.index')}}">Epizody</a>
+        <a href="{{ route('admin::index')}}">Nástěnka</a>
     </li>
 @endauth

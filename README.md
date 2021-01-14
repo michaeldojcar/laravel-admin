@@ -16,3 +16,12 @@ php artisan migrate
 ```
 
 Add routes to your `routes/web.php`.
+```
+Admin::routes(['register' => false]);
+```
+
+
+Publish config and assets.
+```
+php artisan vendor:publish --provider="MichaelDojcar\LaravelAdmin\Providers\AdminServiceProvider"
+```

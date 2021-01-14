@@ -10,7 +10,7 @@
     <title>Administrace | {{config('app.name')}}</title>
 
     <!-- CSS -->
-    <link href="{{ asset('css/admin.css') }}"
+    <link href="{{ asset('vendor/admin/css/app.css') }}"
           rel="stylesheet">
 
     {{-- jQuery --}}
@@ -24,7 +24,7 @@
     <div id="app">
         <nav class="navbar navbar-light fixed-top navbar-toggleable-md  bg-faded">
             <div class="navbar-brand">
-                <a href="{{route('admin.index')}}"
+                <a href="{{route('admin::index')}}"
                    style="color: white"><b>{{config('app.name')}}</b> - Administrace</a>
             </div>
             <ul class="navbar-nav mr-auto">
@@ -55,7 +55,7 @@
             <!-- sidebar -->
             <div id="sidebar-wrapper">
                 <ul class="sidebar-nav">
-                    @include('components.menu')
+                    @include('admin::components.menu')
                 </ul>
             </div>
             <!-- /#sidebar-wrapper -->

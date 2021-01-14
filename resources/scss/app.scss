@@ -1,0 +1,304 @@
+/**
+ * Simple webadmin template by Michael Dojčár (michaeldojcar.cz)
+ *
+ * Based on Twitter Bootstrap 4 Beta (SCSS version from https://getbootstrap.com/).
+ * It is required to import Bootstrap into this SCSS.
+ */
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+/* Colors */
+
+$button-color-primary: #43586f;
+
+/* Elements */
+
+hr
+{
+    border-top: 1px solid #eceeef;
+}
+
+h1, h2, h3
+{
+    color:         #2e3f55;
+
+    margin-bottom: 1rem;
+}
+
+/* Komponenty */
+
+/* Content header */
+.page-header
+{
+    h1
+    {
+        padding: 10px 0 0;
+        color:   #2e3f55;
+    }
+}
+
+/* Karty */
+.card
+{
+    border-radius: 0;
+
+    margin-bottom: 1em;
+
+    box-shadow:    rgba(135, 135, 135, 0.22) 0 0 13px;
+
+    .card-header
+    {
+        $header-color: #43586f;
+        $header-color-darker: darken($header-color, 10);
+
+        border-radius:    0;
+        border-top:       $header-color-darker solid 3px;
+
+        background-color: $header-color;
+        color:            white;
+    }
+}
+
+.card-green
+{
+    .card-header
+    {
+        border-top:       #50be99 solid 3px;
+        border-bottom:    rgba(80, 190, 153, 0.25) solid 1px;
+
+        background-color: #b3e3d3;
+
+        color:            #2b6c56;
+    }
+}
+
+/* Table for administration items */
+
+.table-manage
+{
+
+    // Use with bootstrap.table
+
+    $header-color: #43586f;
+    $header-color-darker: darken($header-color, 10);
+
+    border:     1px solid #dee2e6;
+    box-shadow: rgba(135, 135, 135, 0.22) 0 0 13px;
+
+    th
+    {
+        border-top:       $header-color-darker solid 3px;
+        border-bottom:    transparentize($header-color-darker, 0.5) solid 1px;
+
+        border-left:      1px $header-color solid;
+        border-right:     1px $header-color solid;
+
+        background-color: $header-color;
+
+        color:            white;
+        font-weight:      normal;
+    }
+
+    td
+    {
+        vertical-align: center;
+        border:         1px solid #dee2e6;
+    }
+}
+
+/* Buttons */
+.btn-login
+{
+    -webkit-border-radius: 0;
+    -moz-border-radius:    0;
+    border-radius:         0;
+
+    color:                 white;
+    background-color:      none;
+
+    &:hover
+    {
+        color: darken(white, 5%);
+    }
+}
+
+/* Page layout */
+
+body
+{
+    background-color: #ffffff;
+    overflow-x:       hidden;
+
+    margin-top:       54px;
+}
+
+#wrapper
+{
+    padding-left: 0;
+    //-webkit-transition: all 0.5s ease;
+    //-moz-transition:    all 0.5s ease;
+    //-o-transition:      all 0.5s ease;
+    //transition:         all 0.5s ease;
+}
+
+#wrapper.toggled
+{
+    padding-left: 250px;
+}
+
+#wrapper.toggled #sidebar-wrapper
+{
+    width: 250px;
+}
+
+#page-content-wrapper
+{
+    width:    100%;
+    position: absolute;
+    padding:  15px;
+}
+
+#wrapper.toggled #page-content-wrapper
+{
+    position:     absolute;
+    margin-right: -250px;
+}
+
+@media(min-width: 768px)
+{
+    #wrapper
+    {
+        padding-left: 0;
+    }
+
+    #wrapper.toggled
+    {
+        padding-left: 250px;
+    }
+
+    #sidebar-wrapper
+    {
+        width: 0;
+    }
+
+    #wrapper.toggled #sidebar-wrapper
+    {
+        width: 250px;
+    }
+
+    #page-content-wrapper
+    {
+        padding:  20px 20px 20px 30px;
+        position: relative;
+    }
+
+    #wrapper.toggled #page-content-wrapper
+    {
+        position:     relative;
+        margin-right: 0;
+    }
+}
+
+/* Horní navbar */
+
+.navbar
+{
+    background: #25313f;
+}
+
+.navbar-light .navbar-brand
+{
+    color: white;
+}
+
+.navbar-light .navbar-brand:hover
+{
+    color: white;
+}
+
+/* Sidebar */
+
+#sidebar-wrapper
+{
+    z-index:     1000;
+    position:    fixed;
+    left:        250px;
+    width:       0;
+    height:      100%;
+    margin-left: -250px;
+    overflow-y:  auto;
+    background:  #435970;
+    //-webkit-transition: all 0.5s ease;
+    //-moz-transition:    all 0.5s ease;
+    //-o-transition:      all 0.5s ease;
+    //transition:         all 0.5s ease;
+}
+
+.sidebar-nav
+{
+    position:   absolute;
+    top:        0;
+    width:      250px;
+    margin:     0;
+    padding:    0;
+    list-style: none;
+
+}
+
+.sidebar-nav li
+{
+    text-indent: 20px;
+    line-height: 40px;
+}
+
+.sidebar-nav li a
+{
+    display:         block;
+    text-decoration: none;
+    color:           #ffffff;
+}
+
+.sidebar-nav li a:hover
+{
+    text-decoration: none;
+    color:           #ffffff;
+    background:      rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus
+{
+    text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand
+{
+    height:      65px;
+    font-size:   18px;
+    line-height: 60px;
+}
+
+.sidebar-nav > .sidebar-brand a
+{
+    color: #999999;
+}
+
+.sidebar-nav > .sidebar-brand a:hover
+{
+    color:      #ffffff;
+    background: none;
+}
+
+.active
+{
+    background-color: #2e3f55;
+}
+
+// Sticks on the top of right side.
+.control-panel
+{
+    position: -webkit-sticky; // required for Safari
+    position: sticky;
+    top:      74px; // required as well.
+}
+
+
